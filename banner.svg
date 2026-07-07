@@ -1,0 +1,68 @@
+<svg width="800" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* Background Hitam */
+    .bg { fill: #0a0a0a; }
+
+    /* Setup Font Global */
+    text {
+      font-family: 'Courier New', monospace;
+      font-weight: bold;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+
+    /* Animasi Teks System Online (Cyan) */
+    .sys-text {
+      font-size: 35px;
+      fill: #00fffc;
+      /* Animasi berjalan selama 9 detik dan berulang (infinite) */
+      animation: blinkSys 9s infinite; 
+    }
+
+    /* Animasi Nama (Putih dengan Glitch Shadow) */
+    .main-text {
+      font-size: 45px;
+      fill: #ffffff;
+      animation: showMain 9s infinite;
+      opacity: 0; /* Tersembunyi di awal */
+    }
+
+    /* Animasi Subtitle (Kuning Cyberpunk) */
+    .sub-text {
+      font-size: 20px;
+      fill: #fcee0a;
+      animation: showMain 9s infinite;
+      opacity: 0; /* Tersembunyi di awal */
+    }
+
+    /* -- TIMELINE ANIMASI -- */
+
+    /* 1. Keyframes Berkedip 3 Kali untuk SYSTEM ONLINE */
+    @keyframes blinkSys {
+      0%, 4%   { opacity: 1; } /* Nyala 1 */
+      5%, 8%   { opacity: 0; } /* Mati 1 */
+      9%, 13%  { opacity: 1; } /* Nyala 2 */
+      14%, 17% { opacity: 0; } /* Mati 2 */
+      18%, 22% { opacity: 1; } /* Nyala 3 */
+      23%, 100%{ opacity: 0; } /* Mati seterusnya sampai loop ulang */
+    }
+
+    /* 2. Keyframes Muncul Teks Utama setelah Berkedip */
+    @keyframes showMain {
+      0%, 23%  { opacity: 0; transform: translateY(20px); filter: none; }
+      26%      { opacity: 1; transform: translateY(0); filter: drop-shadow(3px 3px 0px #00fffc) drop-shadow(-3px -3px 0px #fc004f); }
+      90%      { opacity: 1; transform: translateY(0); filter: drop-shadow(3px 3px 0px #00fffc) drop-shadow(-3px -3px 0px #fc004f); }
+      95%, 100%{ opacity: 0; transform: translateY(-15px); filter: none; } /* Fade out ke atas sebelum loop */
+    }
+  </style>
+
+  <!-- Latar Belakang -->
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- Teks 1: Berkedip di tengah -->
+  <text x="50%" y="50%" class="sys-text">&gt;_SYSTEM ONLINE..</text>
+
+  <!-- Teks 2: Muncul setelah teks 1 selesai -->
+  <text x="50%" y="45%" class="main-text">Wake UP Programmer!</text>
+  <text x="50%" y="68%" class="sub-text">&lt; We Have A Device To Burn...//&gt;</text>
+</svg>
