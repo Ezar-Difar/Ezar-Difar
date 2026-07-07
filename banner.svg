@@ -64,5 +64,5 @@
 
   <!-- Teks 2: Muncul setelah teks 1 selesai -->
   <text x="50%" y="45%" class="main-text">Wake UP Programmer!</text>
-  <text x="50%" y="68%" class="sub-text">&lt; We Have A Device To Burn...//&gt;</text>
+  <text x="50%" y="68%" class="sub-text">&lt; We Have A Device To Burn...&gt;</text>
 </svg>
